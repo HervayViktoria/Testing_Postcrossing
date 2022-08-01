@@ -1,7 +1,7 @@
 class HomePage{
     // selectors
     public get signInBtn(){
-        return $('[type="submit"]');
+        return $('[type="submit"].button');
     }
     //functions
     public async openMainPage() {
