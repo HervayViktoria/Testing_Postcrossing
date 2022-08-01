@@ -5,7 +5,6 @@ class SettingsPage{
 
     public get AvatarMenu(){
         return $('ul.tabs').$$('li')[3].$('a');
-
     }
 
     public get ChooseAvatarBtn(){
@@ -22,6 +21,10 @@ class SettingsPage{
 
     public get SuccessMsgForAvatarUpload(){
         return $('.success.highlight-effect');
+    }
+
+    public get ErrorMsgForInvalidAvatarUpload(){
+        return $('.error_list > li');
     }
 
 
