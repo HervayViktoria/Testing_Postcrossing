@@ -1,4 +1,4 @@
-import HomePage from '../pageobjects/HomePage';
+import HomePage from '../pages/HomePage';
 class LoginPage{
     //Selectors
     public get emailInput(){
@@ -27,7 +27,6 @@ class LoginPage{
         await this.emailInput.setValue(email);
         await this.passInput.setValue(pass);
         await this.loginBtn.click();
-        await expect(browser).toHaveUrlContaining('https://www.postcrossing.com/');
     }
 
     public async signOut(){
@@ -36,7 +35,7 @@ class LoginPage{
     }
 
     public async loginWithInvalidEmailFormat(){
-        await expect(this.errorMessage).toHaveTextContaining('dfadsfasd');
+        await expect(this.errorMessage).toHaveTextContaining('is not a valid username.');
     }
 
     public async loginWithInvalidEmail(){
