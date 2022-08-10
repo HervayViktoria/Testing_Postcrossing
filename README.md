@@ -1,5 +1,5 @@
 # What is this?
-Small testing project on my favourite website to demonstrate what kind of tools I'm familiar with.
+Small testing project on my favourite website to demonstrate what kind of tools I'm familiar with. Also so far I wrote automated test with Node.js, and I wanted to try it out with TypeScript.
 
 # What does it do if you run it?
 1. Testing different kind of login scenarios to the site called Postcrossing.
