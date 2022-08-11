@@ -1,21 +1,21 @@
-class HomePage{
+class HomePage {
     // selectors
-    public get signInBtn(){
+    public get signInBtn() {
         return $('[type="submit"].button');
     }
-    //functions
+
+    // functions
     public async openMainPage() {
         await browser.url(`https://${process.env.SITE_URL}`);
     }
 
-    public async clickOnSignIn(){
+    public async clickOnSignIn() {
         await this.signInBtn.click();
     }
 
-    public async openAndClickSignIn(){
+    public async openAndClickSignIn() {
         this.openMainPage();
         this.clickOnSignIn();
     }
-
 }
 export default new HomePage();

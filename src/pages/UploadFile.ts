@@ -1,10 +1,11 @@
-import SettingsPage from './SettingsPage';
+/* eslint-disable import/no-unresolved */
 import * as path from 'path';
+import SettingsPage from './SettingsPage';
 
-class UploadFile{
 
-    public async uploadValidAvatar(){
-        await SettingsPage.AvatarMenu.click();
+class UploadFile {
+    public async uploadValidAvatar() {
+        await SettingsPage.clickOnAvatarMenu();
         (await SettingsPage.ChooseAvatarBtn).setValue(path.join(__dirname, '../assets/pictures/pic1.jpg'));
         (await SettingsPage.UploadAvatarBtn).click();
         (await SettingsPage.CropBtn).click();
@@ -12,11 +13,11 @@ class UploadFile{
     }
 
     public async uploadInvalidAvatar() {
-        (await SettingsPage.AvatarMenu).click();
+        await SettingsPage.clickOnAvatarMenu();
         (await SettingsPage.ChooseAvatarBtn).setValue(path.join(__dirname, '../assets/pictures/wrongpic.heic'));
         (await SettingsPage.UploadAvatarBtn).click();
         (await SettingsPage.CropBtn).click();
-        await expect(SettingsPage.ErrorMsgForInvalidAvatarUpload).toHaveTextContaining('Required');
+        await expect(SettingsPage.ErrorMsgForInvalidAvatarUpload).toHaveTextContaining('Unable to open image file');
     }
 }
 
